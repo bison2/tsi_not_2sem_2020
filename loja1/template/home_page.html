@@ -16,6 +16,15 @@
             <h2>{{ content }}</h2>
             
             <h2 class="text-capitalize">Tá funcionando perfeitamente!!!</h2>
+            <!--<div class='container'></div>-->
+                {% if request.user.is_authenticated %}
+                <div class='row'>
+                    <div class='col-6 bg-success text-center text-warning'>
+                        <h1>Premium</h1>
+                        <p>{{ premium_content }}</p>
+                    </div>
+                </div>
+                {% endif %}
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
