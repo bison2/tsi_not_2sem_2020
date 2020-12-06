@@ -1,17 +1,18 @@
 from django import forms
 from django.contrib.auth import get_user_model
 
+
 User = get_user_model()
 class ContactForm(forms.Form):
     full_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                    "class": "form-control", 
+                    "class": "form-control bg-primary text-warning", 
                     "placeholder": "Seu nome completo"
                 }
             )
         )
-    email     = forms.EmailField(
+    email = forms.EmailField(
         widget=forms.EmailInput(
             attrs={
                     "class": "form-control", 
@@ -35,8 +36,22 @@ class ContactForm(forms.Form):
         return email
 
 class LoginForm(forms.Form):
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(widget=forms.TextInput(
+            attrs={
+                    "class": "form-control bg-danger", 
+                    "placeholder": "Digite sua mensagem"
+                }
+            )
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                 "class": "form-control bg-success", 
+                 "placeholder": "Digite sua mensagem"
+                }
+            )
+        )
+    
 
 class RegisterForm(forms.Form):
     username = forms.CharField()
