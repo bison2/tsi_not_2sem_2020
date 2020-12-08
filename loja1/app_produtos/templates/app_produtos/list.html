@@ -1,1 +1,14 @@
-{{ qs }}
+<!--
+{{ qs}}
+{{ paginator }}
+{{ is_paginated }}
+{{ object_list }}
+!-->
+
+
+
+{% for obj in object_list %}
+
+{{ obj.title }} <br/>
+
+{% endfor%}
