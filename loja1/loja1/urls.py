@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from products.views import ProductListView, product_list_view
+from app_produtos.views import ProductListView, product_list_view
 from .views import home_page, about_page, contact_page, login_page, register_page
 
 urlpatterns = [
@@ -21,4 +21,3 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    
