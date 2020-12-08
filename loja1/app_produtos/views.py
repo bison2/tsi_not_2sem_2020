@@ -8,7 +8,7 @@ class ProductListView(ListView):
     #traz todos os produtos do banco de dados sem filtrar nada 
     queryset = Product.objects.all()
     template_name = "app_produtos/list.html"
-    
+
 
 #Function Based View
 def product_list_view(request):
@@ -16,4 +16,4 @@ def product_list_view(request):
     context = {
         'qs': queryset
     }
-    return render(request, "products/list.html", context)
+    return render(request, "app_produtos/list.html", context)
