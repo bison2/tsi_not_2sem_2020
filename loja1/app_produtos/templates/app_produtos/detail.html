@@ -16,7 +16,10 @@
         
             <div class="row">
                 <div class="col-3">
-                <img src='{{ object.image.url }}' class="img-fluid" />
+
+                {% if object.image %}
+                   <img src='{{ object.image.url }}' class='img-fluid'/>
+                {% endif %}
                 </div>
              </div> 
 
