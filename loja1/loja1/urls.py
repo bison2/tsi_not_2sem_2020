@@ -18,7 +18,7 @@ urlpatterns = [
     path('contact/', contact_page),
     path('login/', login_page),
     path('register/', register_page),
-    path('products/', include("app_produtos.urls")),
+    path('products/', include("app_produtos.urls", namespace="products")),
     path('admin/', admin.site.urls),
 ]
 
