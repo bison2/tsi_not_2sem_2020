@@ -1,14 +1,16 @@
-<!--
-{{ qs}}
-{{ paginator }}
-{{ is_paginated }}
-{{ object_list }}
-!-->
-
-
-
-{% for obj in object_list %}
-
-<a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <br/>
-
-{% endfor%}
+{% extends "base.html" %}
+    {% block content %}
+    <div class='container'>
+        <div class='row'>
+  
+            {% for obj in object_list %}
+            <div class="col">                
+                {% include 'app_produtos/snippets/card.html' with instance=obj %}
+                <!-- <a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <br/> -->
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+        {% endblock content %}
+            
+        
