@@ -7,7 +7,7 @@ class ContactForm(forms.Form):
     full_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                    "class": "form-control bg-primary text-warning", 
+                    "class": "form-control", 
                     "placeholder": "Seu nome completo"
                 }
             )
@@ -36,18 +36,19 @@ class ContactForm(forms.Form):
         return email
 
 class LoginForm(forms.Form):
-    username = forms.CharField(widget=forms.TextInput(
+    username = forms.CharField(
+        widget=forms.TextInput(
             attrs={
-                    "class": "form-control bg-danger", 
-                    "placeholder": "Digite sua mensagem"
+                    "class": "form-control", 
+                    "placeholder": "digite seu nome de usuario"
                 }
             )
     )
     password = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
-                 "class": "form-control bg-success", 
-                 "placeholder": "Digite sua mensagem"
+                 "class": "form-control ", 
+                 "placeholder": "Digite sua senha"
                 }
             )
         )
