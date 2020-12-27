@@ -4,7 +4,9 @@
 
 
         <h1 class="text-center text-success"> {{ object.title }}</h1> <br/>
-        <h2 class="text-center bg-success"> {{ object.description }} </h2><br/>
+        {{object.timestamp|timesince}}atrás 
+        <h3>{{"bom dia tags title, linebreaks, truncatewords"|title}}</h3>
+        <h2 class=""> {{ object.description|linebreaks}} </h2><br/>
         
             <div class="row">
                 <div class="col-3">
@@ -19,7 +21,9 @@
                 <img class="card-img-top" src="{{ object.image.url }}" alt="Imagem de capa do card">
                 <div class="card-body">
                   <h5 class="card-title"> {{object.title}}</h5>
-                  <p class="card-text">{{object.description}}</p>
+                  {{object.timestamp|timesince}} atrás 
+                  <h3>{{"bom dia tags title, linebreaks, truncatewords"|title}}</h3>
+                  <p class="card-text">{{object.description|linebreaks}}</p>
                   <a href="#" class="btn btn-primary">Visitar</a>
                 </div>
               </div>
