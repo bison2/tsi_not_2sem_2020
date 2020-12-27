@@ -25,16 +25,11 @@ class ProductManager(models.Manager):
         #return self.get_queryset().filter(featured = True)
         return self.get_queryset().featured()
 
-    
-    
     def get_by_id(self, id):
         qs = self.get_queryset().filter(id = id)
         if qs.count() == 1:
             return qs.first()
         return None
-
-
-
 
 # Create your models here.
 class Product(models.Model): #product_category
