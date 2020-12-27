@@ -21,6 +21,7 @@ urlpatterns = [
     path('logout/', logout_page, name='logout'),
     path('register/', register_page, name='register'),
     path('products/', include("app_produtos.urls", namespace="products")),
+    path('search/', include("search.urls", namespace="search")),
     path('admin/', admin.site.urls),
 ]
 
