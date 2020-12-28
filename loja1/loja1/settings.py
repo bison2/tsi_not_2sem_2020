@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     #our apps
     'app_produtos',
     'search',
-    'tags'
+    'tags',
+    'carts'
 ]
 
 MIDDLEWARE = [
