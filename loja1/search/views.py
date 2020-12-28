@@ -3,7 +3,17 @@ from django.views.generic import ListView
 from app_produtos.models import Product
 
 class SearchProductView(ListView):
-    template_name = "app_produtos/list.html"
+    #template_name = "app_produtos/list.html"
+    template_name = "search/view.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        query = self.request.GET.get('q')
+        context['query'] = query
+        #SearchQuery.objects.create(query=query)
+        return context
+
+    
     def get_queryset(self, *args, **kargs):
         request = self.request
         print('Solicitação', request)
