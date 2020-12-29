@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Carrinho</h1>
+
+    <div class="row ">
+        <div class="col-8">
+            <table class="table table-striped">
+                <tr>
+                <th>Usuarios</th>
+                
+                <th>valor sub-total</th>
+                <th>valor total</th>
+                </tr>
+                <tr>
+                {% for obj in objects %}
+                <td>{{ obj.user }}</td>
+                
+                <td>{{ obj.subtotal}}</td>
+                <td>{{ obj.total}}</td>
+                </tr>
+                {% endfor %}
+                
+            </table>
+        </div>    
+    </div>
 {% endblock %}
