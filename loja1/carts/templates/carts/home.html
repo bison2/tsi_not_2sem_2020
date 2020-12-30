@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
     <div class="row ">
-        <div class="col-8">
+        <!-- 
+        <div class="col-5">
             <table class="table table-striped">
                 <tr>
                 <th>Usuarios</th>
@@ -22,5 +23,56 @@
                 
             </table>
         </div>    
+        -->
+
+        <div class="col-5">
+            <table class="table table-striped">
+                <tr>
+                <th>Id cart</th>
+                <th>dono</th>
+                
+                </tr>
+                
+                <tr>
+                    
+                {% for obj in objects %}
+                <td>{{ obj }}</td>
+                <td>{{ obj.user }}</td>
+                </tr>
+
+                <tr>   
+                    <th>pedido</th>
+                    <th>valor</th>
+                    <th>imagem</th>
+                </tr>
+                <tr>                 
+                    {% for l in obj.products.all %}
+                    <td>{{ l.title }}</td>
+                    <td>{{ l.price}}</td>
+                    
+                    <td >
+                        <img src='{{ l.image.url }}' class='img-fluid'/>
+                    </td>
+                               
+                   </tr>
+                    
+                   
+                    {% endfor %}
+                    <tr>
+                        <th> Sub-total</th>
+                        <td> {{obj.subtotal}}</td>
+                    </tr>
+                    <tr>
+                        <th> Total</th>
+                        <td> {{ obj.total }}</td>
+                    </tr>
+                
+                {% endfor %}
+                
+            </table>
+            
+        </div>
+        
     </div>
+    
 {% endblock %}
