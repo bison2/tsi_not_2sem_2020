@@ -6,6 +6,7 @@ from django.contrib import admin
 from django.urls import path, include
 from carts.views import cart_home
 
+
 from .views import (home_page, 
                     about_page, 
                     contact_page, 
@@ -24,6 +25,7 @@ urlpatterns = [
     path('register/', register_page, name='register'),
     path('products/', include("app_produtos.urls", namespace="products")),
     path('search/', include("search.urls", namespace="search")),
+    path('homepay/', include('payments.urls')),
     path('admin/', admin.site.urls),
 ]
 

@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'search',
     'tags',
     'carts',
-]
+    'payments.apps.PaymentsConfig',
+       
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
