@@ -26,6 +26,7 @@
         -->
 
         <div class="col-5">
+            
             <table class="table table-striped">
                 <tr>
                 <th>Id cart</th>
@@ -63,16 +64,25 @@
                         <td> {{obj.subtotal}}</td>
                     </tr>
                     <tr>
+                        
                         <th> Total</th>
                         <td> {{ obj.total }}</td>
                     </tr>
+
+                    <tr>
+                        
+                        <td> <a class="btn btn-success" href="../homepay/{{obj}}">pagar</a>{{obj.total}}</td>
+                    </tr>
                 
+
                 {% endfor %}
-                
             </table>
             
         </div>
+        <hr>
         
+        
+
     </div>
     
 {% endblock %}

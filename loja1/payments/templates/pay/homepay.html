@@ -1,12 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
 
-<h2>Pay Rs. 10.00</h2>
-<form action="{% url 'charge' %}" method="post">  
+<h3>R$ {{ total }} {{id}}</h3>
+ 
+     <form action="{% url 'charge' id %}" method="post">  
      {% csrf_token %}  
      <script src="https://checkout.stripe.com/checkout.js"
+     
           class="stripe-button"          
           data-key="{{ key }}"          
           data-description="teste Makna"          
-          data-amount="1000"          
+          data-amount= "{{total2}}"        
           data-locale="auto">
-     </script>
+     </script> 
 </form>
+
+
+
+{% endblock %}
