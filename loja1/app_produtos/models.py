@@ -53,6 +53,7 @@ class Product(models.Model): #product_category
     featured    = models.BooleanField(default = False)
     active      = models.BooleanField(default = True)
     timestamp = models.DateTimeField(auto_now_add=True)
+    
     objects = ProductManager()
 
     def get_absolute_url(self):

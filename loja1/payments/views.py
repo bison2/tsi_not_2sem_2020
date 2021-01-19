@@ -4,7 +4,7 @@ from django.views.generic.base import TemplateView
 import stripe
 from carts.models import Cart, m2m_changed_cart_receiver
 from django.urls import reverse, reverse_lazy
-from django.http import HttpResponse, JsonResponse, request
+from django.http import HttpResponse, JsonResponse, request 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 

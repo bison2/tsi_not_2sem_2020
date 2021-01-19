@@ -6,47 +6,85 @@
 {% url 'login' as login_url %}
 {% url 'logout' as logout_url %}
 {% url 'register' as register_url %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+
+{% url 'cart' as cart_url %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary  mb-3">
   <div class="container">
       <a class="navbar-brand" href="{{home_url}}">
         <img src="{% static 'img/bootstrap.svg' %}" class='img-fluid' />
       </br>
       {% if nome_da_marca %} {{ nome_da_marca }} {% else %} C&oacute;digo Fluente eCommerce {% endif %}</a>
       
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span  class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse"  id="navbarNav">
           <ul class="navbar-nav mr-auto">
           <li class="nav-item {% if request.path == home_url %} active {% endif %}">
-            <a class="nav-link" href="{{ home_url }}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white " href="{{ home_url }}">
+              <span style="font-size: 2em; color: rgba(254, 255, 255, 0.938);">
+                <i class="fas fa-house-user"></i>
+              </span> 
+              <strong>Home</strong>
+              <span class="sr-only">(current)</span></a>
           </li>
+              
           <li class="nav-item {% if request.path == contact_url %} active {% endif %}">
-            <a class="nav-link" href="{{ contact_url }}">Contato</a>
+            <a class="nav-link text-white" href="{{ contact_url }}">
+              <span style="font-size: 2em; color: rgba(255, 255, 255, 0.904);">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <strong>Contato</strong>
+              </a>
           </li>
           <li class="nav-item {% if request.path == products_list_url %} active {% endif %}">
-            <a class="nav-link" href="{{ products_list_url }}">Produtos</a>
+            <a class="nav-link text-white" href="{{ products_list_url }}">
+              <span style="font-size: 2em; color: rgba(255, 255, 255, 0.904);">
+                <i class="fas fa-gifts"></i>
+              </span>
+              <strong>Produtos</strong></a>
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item {% if request.path == login_url %} active {% endif %}"> 
-            <a class="nav-link" href="{{ logout_url }}">Logout</a> 
+            <a class="nav-link text-white" href="{{ logout_url }}">
+              <span style="font-size: 2em; color: rgba(255, 255, 255, 0.904);">
+                <i class="fas fa-user-times"></i>
+              </span>
+              <strong>Logout</strong>
+              </a> 
           </li>
           {% else %}
           <li class="nav-item {% if request.path == login_url %} active {% endif %}">
-            <a class="nav-link" href="{{ login_url }}">Login</a>
+            <a class="nav-link text-white" href="{{ login_url }}">
+              <span style="font-size: 2em; color: rgba(255, 255, 255, 0.904);">
+                <i class="fas fa-user-check"></i>
+              </span>
+              <strong>Login</strong></a>
           </li>
-          <li class="nav-item {% if request.path == register %} active {% endif %}"> 
-            <a class="nav-link" href="{{ register_url }}">Registrar-se</a> 
+          <li class="nav-item {% if request.path == register_url  %} active {% endif %}"> 
+            <a class="nav-link text-white" href="{{ register_url }}">
+              <span style="font-size: 2em; color: rgba(255, 255, 255, 0.904);">
+                <i class="fas fa-address-card"></i>
+              </span>
+              <strong>Registrar-se</strong>
+              </a> 
           </li>
         {% endif %}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
+        <li class="nav-item dropdown  ">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span style="font-size: 2em; color: rgba(255, 255, 255, 0.904);">
+              <i class="fas fa-shopping-cart"></i>
+            </span>
+            <strong>
+            Carrinho e pagamento
+          </strong>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="{{ cart_url }}">Cart</a>
+            
+          <a class="dropdown-item" href="{% url 'cart' %}">Cart url</a>
+          <a class="dropdown-item" href="#">HomePay ta com problema no url reverse</a>
           </div>
         </li>
         </ul>
