@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b#2v2#+dzq43(g#)$g0@tr@)32_j0wymx2pu_4w6(4l#sy(@3h'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True 
@@ -137,8 +137,8 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
 
-PUBLISHABLE_KEY = 'pk_test_51I4kUoC1znJ6qJHVqwZdlKf3f9aWBxFHnIwIPJq8kOSWPhxXpc31G27IJ1k223ptaqU8Omk3hfFzFGmH6cQB4lWh00CIoDvs3m'
-STRIPE_SECRET_KEY = 'sk_test_51I4kUoC1znJ6qJHVBjPfjsbRCKaeo4eTX7YOtjDzgaYMm1C1lkiLziBqvGRAEcG4pxlUuF7OyT3RY2v45qCdVejw00oxUTSFTm'
+PUBLISHABLE_KEY = ''
+STRIPE_SECRET_KEY = ''
 
 
 
