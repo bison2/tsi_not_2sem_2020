@@ -1,4 +1,4 @@
-from django.http import Http404, request
+#from django.http import Http404, request
 
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404
@@ -14,7 +14,7 @@ class ProductFeaturedListView(ListView):
 class ProductFeaturedDetailView(DetailView):
     queryset = Product.objects.all().featured()
     template_name = "app_produtos/featured-detail.html"
-    print(request.user)
+    
 #Class Based View
 class ProductListView(ListView):    
 #traz todos os produtos do banco de dados sem filtrar nada 
