@@ -4,5 +4,5 @@ __pycache__/
 *$py.class
 
 *.sqlite3
-*.env.txt
-*.env.*
+
+*.py[env]
